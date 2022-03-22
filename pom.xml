@@ -20,6 +20,18 @@
         </plugins>
     </build>
     <dependencies>
+        <dependency>
+            <groupId>io.emqx</groupId>
+            <artifactId>emqx-extension-java-sdk</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.paho</groupId>
+            <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.zeromq/jeromq -->
         <dependency>
             <groupId>org.zeromq</groupId>

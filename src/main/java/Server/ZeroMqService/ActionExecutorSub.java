@@ -6,7 +6,7 @@ import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
 import java.util.concurrent.ConcurrentHashMap;
-
+//提交浇水事件类
 public class ActionExecutorSub implements Runnable{
 
 

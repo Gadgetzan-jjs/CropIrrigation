@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-
+//提交日志类
 public class ActionExecutorLog implements Runnable{
     private final InfluxDBUtil influxDBUtil;
     public static ConcurrentHashMap<String,String> datamap=new ConcurrentHashMap();

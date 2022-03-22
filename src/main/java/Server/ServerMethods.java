@@ -2,6 +2,7 @@ package Server;
 
 import Server.LogSystem.AheadLog;
 //import Server.ZeroMqService.ActionExecutor;
+import Server.Tools.OpsConcurrentHashMap;
 import Server.ZeroMqService.ActionExecutorError;
 import Server.ZeroMqService.ActionExecutorLog;
 import Server.ZeroMqService.ActionExecutorSub;
@@ -80,19 +81,22 @@ public class ServerMethods {
             case "watering":
                 Thread watering=new Thread(new ActionExecutorWatering());
                 watering.setName(watering.getId()+"");
-                ActionExecutorWatering.datamap.put(watering.getName(),data);
+                OpsConcurrentHashMap.putvalue(ActionExecutorWatering.datamap,watering.getName(),data);
+//                ActionExecutorWatering.datamap.put(watering.getName(),data);
                 executor.submit(watering);
                 break;
             case "log":
                 Thread log=new Thread(new ActionExecutorLog());
                 log.setName(log.getId()+"");
-                ActionExecutorLog.datamap.put(log.getName(),data);
+                OpsConcurrentHashMap.putvalue(ActionExecutorLog.datamap,log.getName(),data);
+//                ActionExecutorLog.datamap.put(log.getName(),data);
                 executor.submit(log);
                 break;
             case "error":
                 Thread error=new Thread(new ActionExecutorError());
                 error.setName(error.getId()+"");
-                ActionExecutorError.datamap.put(error.getName(),data);
+                OpsConcurrentHashMap.putvalue(ActionExecutorError.datamap,error.getName(),data);
+//                ActionExecutorError.datamap.put(error.getName(),data);
                 executor.submit(error);
                 break;
         }

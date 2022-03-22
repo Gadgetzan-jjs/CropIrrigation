@@ -4,14 +4,10 @@ import org.zeromq.SocketType;
 import org.zeromq.ZMQ;
 
 import java.util.concurrent.ConcurrentHashMap;
-
+//浇水同步类
 public class ActionExecutorWatering implements Runnable{
 
     public static ConcurrentHashMap<String,String> datamap=new ConcurrentHashMap();
-
-
-
-
     @Override
     public void run() {
         ZMQ.Context context=ZMQ.context(1);
@@ -23,7 +19,6 @@ public class ActionExecutorWatering implements Runnable{
         }
         publisher.close();
         context.term();
-
     }
 
 
